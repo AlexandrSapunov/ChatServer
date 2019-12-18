@@ -14,24 +14,14 @@ namespace Server.Commands
             Program.ServerWorker.SendMessage(message);
         }
 
-        public static void Status()
-        {
-            string ip = InfoServer.Ip.ToString();
-            DateTime dateTime = InfoServer.ServerStartTime;
-
-            Console.WriteLine($"Status:\n");
-            Console.WriteLine($"Ip адрес: {InfoServer.Ip}");
-            Console.WriteLine($"порт: {InfoServer.Port}");
-            Console.WriteLine($"Время включения: {InfoServer.ServerStartTime}");
-        }
-
         public static void Help()
         {
-            Console.WriteLine("Help: Show list command\n");
-            Console.WriteLine("Send: Send message\n");
-            Console.WriteLine("Ban: Disconnect User\n");
-            Console.WriteLine("Status:   ()\n");
-            Console.WriteLine("Exit: Close client");
+            Console.WriteLine("Help: казывает все команды сервера\n");
+            Console.WriteLine("Send: Отправляет сообщения\n");
+            Console.WriteLine("UserList: показывает список пользователей ip и время их подключения\n");
+            Console.WriteLine("Ban: Отключает клиента от сервера\n");
+            Console.WriteLine("Status: Показывает ip адрес, порт и время подключения\n");
+            Console.WriteLine("Exit: Закрыть сервер");
         }
 
         public static void Ban(string name)

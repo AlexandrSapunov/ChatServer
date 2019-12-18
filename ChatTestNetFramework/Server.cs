@@ -73,11 +73,15 @@ namespace Server
 
         public void InfoClient()
         {
-            int i = 1;
+            if(Clients.Count == 0)
+            {
+                Console.WriteLine("В данный момент на сервере нет подключенных пользователей");
+                return;
+            }
+            Console.WriteLine("В данный момент на сервере:");
             foreach (var client in Clients)
             {
-                Console.WriteLine($"{i} : {client.Name}");
-                i++;
+                Console.WriteLine($"{client.Name} ({client.Ip})  {client.FirstConnectTime}");
             }
         }
 

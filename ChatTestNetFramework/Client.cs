@@ -34,6 +34,7 @@ namespace Server
         public string Ip { get; private set; }
         public string Name { get; private set; }
         public DateTime LastActivity { get; private set; }
+        public DateTime FirstConnectTime { get; set; }
 
 
         private void LoopReceiveMessage()
@@ -54,7 +55,7 @@ namespace Server
             // Если имя уникально, то добавляем в коллекцию подключенных клиентов
             Program.ServerWorker.Clients.Add(this);
 
-
+            FirstConnectTime = DateTime.Now;
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"{Name} подключился к серверу ({Ip})");
             Console.ResetColor();

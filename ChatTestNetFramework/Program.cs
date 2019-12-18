@@ -36,9 +36,6 @@ namespace Server
                     case TypeCommand.Help:
                         CommandWorker.Help();
                         break;
-                    case TypeCommand.Status:
-                        CommandWorker.Status();
-                        break;
                     case TypeCommand.Exit:
                         CommandWorker.Exit();
                         break;

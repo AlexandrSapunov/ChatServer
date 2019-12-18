@@ -18,9 +18,6 @@ namespace Server.Commands
         Help,
 
         [Single]
-        Status,
-
-        [Single]
         Userlist,
 
         [Single]
